@@ -3,28 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ScriptZ-Engine — starter</title>
+<title>ScriptZ-Engine</title>
 <link rel="stylesheet" href="scriptz-engine.css">
+<link rel="stylesheet" href="oobe.css">
 </head>
 <body class="sz-page">
 <canvas id="game"></canvas>
-
 <script src="scriptz-engine.js"></script>
-<script>
-// ---- ScriptZ-Engine starter: this is where YOUR game goes ----
-const game = new ScriptZ.Game({ canvas: '#game', width: 960, height: 540, gravity: 900 });
-
-game.scene('main', {
-  create(scene) {
-    game.ui.hud('engine', 'ScriptZ-Engine v' + ScriptZ.version);
-    // scene.spawn({ shape:'squircle', x:480, y:100, w:60, bounce:.7, update(dt){ ... } });
-  },
-  update(scene, dt) {
-    // runs every fixed step (1/60s)
-  }
-});
-
-game.start('main');
-</script>
+<script src="oobe.js"></script>
+<script src="game.js"></script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+/* ScriptZ-Engine OOBE — MaterialUs setup panel (sizes scale with the stage via cqw) */
+.oobe{position:absolute;left:3cqw;top:50%;transform:translateY(-50%);width:42cqw;max-height:92%;overflow:auto;pointer-events:auto;
+  padding:3cqw;border-radius:3cqw;font-size:clamp(11px,1.5cqw,18px);color:var(--sz-text);
+  background:hsl(var(--sz-h) 22% 13% / .82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  animation:oobe-in .7s var(--sz-bounce)}
+.oobe.out{transition:.5s;opacity:0;transform:translateY(-50%) scale(.85)}
+.oobe h1{margin:0 0 .2em;font-size:4.2em;line-height:1;letter-spacing:-.05em;color:var(--sz-pri)}
+.oobe h2{margin:0 0 .3em;font-size:2em;letter-spacing:-.03em}
+.oobe p{margin:0 0 1.2em;opacity:.78;line-height:1.5}
+.oobe-body{min-height:15em;animation:oobe-step .55s var(--sz-bounce)}
+.oobe input{width:100%;font:inherit;font-size:1.3em;padding:.6em 1em;border:0;border-radius:999px;background:hsl(var(--sz-h) 20% 24%);color:var(--sz-text);outline:2px solid transparent;transition:outline-color .2s}
+.oobe input:focus{outline-color:var(--sz-pri)}
+.swatches{display:flex;gap:.8em;flex-wrap:wrap}
+.swatch{width:3.4em;height:3.4em;border:0;border-radius:50%;cursor:pointer;transition:transform .35s var(--sz-bounce),border-radius .35s}
+.swatch:hover{transform:scale(1.15)}.swatch.on{transform:scale(1.2);border-radius:32%;box-shadow:0 0 0 .2em var(--sz-bg),0 0 0 .35em var(--sz-text)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(9em,1fr));gap:.7em}
+.card{display:flex;flex-direction:column;gap:.2em;text-align:left;font:inherit;color:var(--sz-text);border:0;cursor:pointer;padding:1em 1.2em;border-radius:1.6em;background:hsl(var(--sz-h) 20% 22%);transition:transform .35s var(--sz-bounce),background .2s,border-radius .35s}
+.card b{font-size:1.3em}.card span{opacity:.7}
+.card:hover{transform:scale(1.04)}.card.on{background:var(--sz-pri);color:var(--sz-onpri);border-radius:2.2em}
+.sum{display:flex;gap:.5em;flex-wrap:wrap}.sum span{background:hsl(var(--sz-h) 20% 24%);padding:.5em 1.1em;border-radius:999px;font-weight:600}
+.oobe-nav{display:flex;align-items:center;gap:.6em;margin-top:1.6em}
+.oobe-nav .sz-btn{font-size:1.1em;padding:.7em 1.8em}.oobe-nav .sz-btn:last-child{margin-left:auto}
+.dots{display:flex;gap:.4em;margin-bottom:1.6em}
+.dots i{width:.8em;height:.8em;border-radius:999px;background:hsl(var(--sz-h) 20% 30%);transition:width .4s var(--sz-bounce),background .3s}
+.dots i.on{width:2.6em;background:var(--sz-pri)}
+@keyframes oobe-in{from{opacity:0;transform:translateY(-50%) scale(.8)}}
+@keyframes oobe-step{from{opacity:0;transform:translateX(2em) scale(.96)}}
