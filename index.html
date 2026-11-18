@@ -4,13 +4,43 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ScriptZ-Engine</title>
-<link rel="stylesheet" href="scriptz-engine.css">
-<link rel="stylesheet" href="oobe.css">
+<link rel="stylesheet" href="style.css">
 </head>
-<body class="sz-page">
-<canvas id="game"></canvas>
-<script src="scriptz-engine.js"></script>
-<script src="oobe.js"></script>
-<script src="game.js"></script>
+<body>
+<header class="top">
+  <svg class="logo" viewBox="0 0 220 220"><path id="logo" d=""/></svg>
+  <b class="brand">ScriptZ<span>-Engine</span></b>
+  <input id="pname" aria-label="Project name">
+  <span class="sp"></span>
+  <button class="btn" id="play">▶ Play</button>
+  <button class="btn" id="export">Export game</button>
+  <button class="btn" id="savef">Save</button>
+  <button class="btn" id="openf">Open</button>
+  <button class="btn" id="setup">Setup</button>
+  <input type="file" id="pfile" accept=".json" hidden>
+</header>
+<main class="app">
+  <aside class="panel" id="left">
+    <div class="ph"><h3>Objects</h3><button class="btn sm" id="addObj">+ Add</button></div>
+    <div id="objs" class="list"></div>
+    <div class="ph"><h3>Assets</h3><button class="btn sm" id="addAsset">+ Add</button><button class="btn sm" id="draw">Draw</button></div>
+    <div id="assets" class="grid"></div>
+    <p class="hint">Click an asset to put it on the selected object. Drop images, GIFs or videos here.</p>
+    <input type="file" id="afile" accept="image/*,video/*" multiple hidden>
+  </aside>
+  <section class="panel code">
+    <div id="cats" class="cats"></div>
+    <div id="pal" class="pal"></div>
+    <div id="ws" class="ws"></div>
+  </section>
+  <aside class="panel" id="right">
+    <div class="stagewrap"><div id="stage"></div></div>
+    <div id="props"></div>
+  </aside>
+</main>
+<div id="oobe" hidden></div>
+<script src="engine.js"></script>
+<script src="paint.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
